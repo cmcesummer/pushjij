@@ -25,9 +25,10 @@ function sleep(ms) {
       sendMsg += msg + `   ============   \n   `;
       await sleep(500);
     }
-    sender(key, "", sendMsg);
+    // sender(key, "", sendMsg);
+    console.log(sendMsg);
   }
 })();
-timer(() => {
-  console.log(Date.now());
-});
+// timer(() => {
+//   console.log(Date.now());
+// });
