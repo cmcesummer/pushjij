@@ -4,7 +4,9 @@ const finder = require("./finder");
 
 const argv = process.argv.splice(2);
 
-console.log(argv, typeof argv[0]);
+console.log(argv[0]);
+
+console.log(JSON.parse(argv[0]));
 
 // function sleep(ms) {
 //   return new Promise((resolve, reject) => {
