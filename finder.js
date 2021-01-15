@@ -49,10 +49,11 @@ const core = {
 module.exports = function find(id) {
   return new Promise((resolve, reject) => {
     core.yesterday(id, ({ r, name }) => {
-      let msg = `昨天：${name}, r: ${r}          \n`;
+
+      let msg = `<td>${name}</td><td>${r}</td>`;
       core.day(id, ({ map }) => {
         const cache = map[0];
-        msg += `此时： r:【${cache.gszzl}】, value: ${cache.gsz}, time: ${cache.gztime}   \n`;
+        msg += `<td>${cache.gszzl}</td><td>${cache.gsz}</td><td>${cache.gztime}</td>`;
         resolve(msg);
       });
     });

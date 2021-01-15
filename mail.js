@@ -15,10 +15,9 @@ module.exports = function mail(user, pass, html = "", to = "", title = "mail") {
     text: title,
     html,
   };
-
+  const time1 = Date.now();
   mailTransport.sendMail(options, function (err, msg) {
-    if (err) {
-      console.log(err);
-    }
+    if (err) console.log(err);
+    console.log(`[mail use]`, Date.now() - time1);
   });
 };
