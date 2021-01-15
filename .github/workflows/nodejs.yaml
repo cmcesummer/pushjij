@@ -18,6 +18,6 @@ jobs:
       - name: npm install, build
         run: |
           npm install
-          node index.js ${{ secrets.PERSONONE }}
+          node index.js ${{ secrets.PERSONONE }} ${{ secrets.USER }} ${{ secrets.PASS }}
         env:
           CI: true
