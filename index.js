@@ -27,6 +27,6 @@ function sleep(ms) {
       await sleep(500);
     }
     console.log(sendMsg);
-    mail(user, pass, sendMsg, to);
+    mail(user, pass, sendMsg, `"${key}" <${key}>`);
   }
 })();

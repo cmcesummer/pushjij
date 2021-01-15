@@ -22,7 +22,7 @@
   },
   "editor.detectIndentation": false,
   "editor.smoothScrolling": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
