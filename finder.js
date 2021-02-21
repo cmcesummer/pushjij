@@ -19,7 +19,7 @@ const core = {
         if (res.status != 200) throw res.status;
 
         const d = res.text.substring(jsonpName.length + 1, res.text.length - 1);
-        const map = JSON.parse(d).Datas;
+        const map = JSON.parse(d).Datas || {};
 
         fn && typeof fn === "function" && fn({ r: map.RZDF, name: map.SHORTNAME, map });
       })
