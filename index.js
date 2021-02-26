@@ -2,6 +2,7 @@ const finder = require("./finder");
 const mail = require("./mail");
 const chtml = require("./createHtml");
 const code = require("./code");
+const shici = require("./shici");
 
 const argv = process.argv.splice(2);
 
@@ -21,26 +22,10 @@ function sleep(ms) {
   });
 }
 
-// (async () => {
-//   const keys = Object.keys(person);
-//   for (const key of keys) {
-//     await sleep(5000);
-//     let sendMsg = "";
-//     const fund = person[key];
-//     for (const id of fund) {
-//       const time1 = Date.now();
-//       const msg = await finder(id);
-//       console.log(`[finder use]`, Date.now() - time1);
-//       sendMsg +=  `<tr>${msg}</tr>`;
-//       await sleep(500);
-//     }
-//     mail(user, pass, chtml(sendMsg), `"${key}" <${key}>`);
-//   }
-// })();
-
-(async () => {
+;(async () => {
   const keys = person.split(',');
   let i = 0;
+  const beforeText = await shici();
   for (const key of keys) {
     await sleep(5000);
     let sendMsg = "";
@@ -53,6 +38,6 @@ function sleep(ms) {
       await sleep(500);
     }
     i++;
-    mail(user, pass, chtml(sendMsg), `"${key}" <${key}>`);
+    mail(user, pass, chtml(sendMsg, beforeText), `"${key}" <${key}>`);
   }
 })();
